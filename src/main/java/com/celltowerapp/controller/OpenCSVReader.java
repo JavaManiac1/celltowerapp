@@ -3,6 +3,7 @@ package com.celltowerapp.controller;
 import com.celltowerapp.model.CellTower;
 import com.opencsv.CSVReader;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,17 +21,17 @@ public class OpenCSVReader {
         List<CellTower> cellTowersList = new ArrayList<>();
          int i =0;
          CSVReader reader = null;
-       // String fileName ="\\..\\424.csv";
+        String fileName ="424.csv";
          try {
-             reader = new CSVReader(new FileReader("F:\\PROJECTS\\INTERVIEWTASK\\CELLTOWER\\src\\main\\java\\com\\celltowerapp\\controller\\424.csv"));
-            // reader = new CSVReader(new FileReader(fileName));
+            // reader = new CSVReader(new FileReader("F:\\PROJECTS\\INTERVIEWTASK\\CELLTOWER\\src\\main\\java\\com\\celltowerapp\\controller\\424.csv"));
+             reader = new CSVReader(new FileReader(fileName));
              String[] header = reader.readNext();
              String[] line;
              System.out.println(header[0]+" " +header[1] +" "+ header[2]);
              while((line = reader.readNext()) != null ){
                   i++;
                   if(i>1000)break;
-                 System.out.print(i + " ");
+             //    System.out.print(i + " ");
 
                  //System.out.println(line[0] + " " +line[1] +" "+line[2]);
                  //System.out.println(line.toString());
@@ -57,7 +58,8 @@ public class OpenCSVReader {
 //                 }
 //                 System.out.print(" \n");
                  for(CellTower cell : cellTowersList) {
-                     System.out.println("333 \n" + cell.toString());
+           //          System.out.println("333 \n" + cell.toString());
+                    // System.out.println("Directory =  "+new File(".").getAbsolutePath());
                  }
              }
          }catch (IOException e){
