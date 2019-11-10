@@ -22,7 +22,7 @@ public class CellTowerRestController {
             .mcc("2")
             .build();
 
-    @GetMapping("/cellTowers")
+    @GetMapping("/celltowers")
     public List<CellTower> getAllCellTowers(){
 
          List<CellTower> cells = OpenCSVReader.readFromCSV();
